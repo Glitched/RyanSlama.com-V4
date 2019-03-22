@@ -156,14 +156,15 @@ const Windows = () => {
     }
 
 
+    const visibileWindows = windows.filter((w) => !w.isMinimized);
     return (
         <div className="Windows">
-            {windows.filter((w) => !w.isMinimized)
-                .map(((w, i) => <Window
+            {visibileWindows.map(((w, i) =>
+                <Window
                     {...w}
-                    isActive={i == windows.length - 1}
+                    isActive={i == visibileWindows.length - 1}
                     key={w.key}
-                    f={getReducer(i)}
+                    f={getReducer(windows.findIndex(w2 => w2.key === w.key))}
                 />))
             }
             <Desktop reducer={getReducer(-1)} />
