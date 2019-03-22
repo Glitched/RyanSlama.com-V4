@@ -12,10 +12,10 @@ const Home = function Home(props: { start: Function }) {
                 <p>I’m a Computer Science Junior at Cornell. This summer, I’ll be  on Slack’s Product Security team as a Kleiner Perkins Engineering Fellow.
 I’m interested in weird music, modern board games, interesting podcasts, and oxford commas. </p>
                 <ul>
-                    <li><a target="_blank" href="/Resume.pdf">Resume</a></li>
-                    <li><a target="_blank" href="https://www.linkedin.com/in/RyanSlama">LinkedIn</a></li>
-                    <li><a target="_blank" href="https://github.com/Glitched">GitHub</a></li>
-                    <li><a target="_blank" href="https://www.facebook.com/ryan.slama">Facebook</a></li>
+                    <li><a target="_blank" rel="noopener" href="/Resume.pdf">Resume</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/RyanSlama">LinkedIn</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/Glitched">GitHub</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.facebook.com/ryan.slama">Facebook</a></li>
                 </ul>
             </section>
             <aside>
