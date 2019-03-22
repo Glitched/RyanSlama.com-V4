@@ -30,7 +30,7 @@ I’m interested in weird music, modern board games, interesting podcasts, and o
                     if (document.body.clientWidth > 550 || i < 12) {
                         return (<li className="artist" key={artist.id}>
                             <img src={artist.images[1].url} alt="" />
-                            <a href={artist.uri}>{artist.name}</a>
+                            <a target="_blank" rel="noopener" href={artist.uri}>{artist.name}</a>
                         </li>)
                     }
                 })}
@@ -40,13 +40,17 @@ I’m interested in weird music, modern board games, interesting podcasts, and o
             <h2>Ryan <br />Recommends</h2>
             <ul>
                 <li>
-                    <span className="title"><a href="https://www.conradbastable.com/essays/the-uncharity-of-college-the-big-business-nobody-understands">
-                        The Uncharity of College: The Big Business Nobody Understands</a></span>
+                    <span className="title">
+                        <a target="_blank" rel="noopener" href="https://www.conradbastable.com/essays/the-uncharity-of-college-the-big-business-nobody-understands">
+                            The Uncharity of College: The Big Business Nobody Understands</a>
+                    </span>
                     <span className="source">Conrad Bastable</span>
                 </li>
                 <li>
-                    <span className="title"><a href="https://open.spotify.com/album/4EPQtdq6vvwxuYeQTrwDVY?si=Oom12VLUSua1bdw7_gIyzw">
-                        Isolation</a></span>
+                    <span className="title">
+                        <a target="_blank" rel="noopener" href="https://open.spotify.com/album/4EPQtdq6vvwxuYeQTrwDVY?si=Oom12VLUSua1bdw7_gIyzw">
+                            Isolation</a>
+                    </span>
                     <span className="source">Kali Uchis</span>
                 </li>
             </ul>
