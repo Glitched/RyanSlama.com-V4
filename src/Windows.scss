@@ -1,0 +1,277 @@
+.Windows {
+    font-family: "MS Sans Serif", "Microsoft Sans Serif", Arial, Helvetica;
+    user-select: none;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #0098ad;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+@mixin border-outset {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+@mixin border-inset {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+@mixin inverted {
+    background-color: #040089;
+    color: white;
+}
+
+$chrome-grey: #c5c5c5;
+
+.TitleBar {
+    background-color: #878787;
+    color: $chrome-grey;
+    font-weight: bold;
+    padding: 4px;
+    margin: 0;
+    display: flex;
+    min-height: 26px;
+
+    .titleBarTitle {
+        flex-grow: 1;
+    }
+
+    .TitleBarButton {
+        color: black;
+        background-color: $chrome-grey;
+        height: 18px;
+        width: 18px;
+        // display: inline-block;
+        text-align: center;
+        // float: right;
+        @include border-outset();
+        margin-left: 4px;
+    }
+}
+
+.Window {
+    width: 100%;
+    height: 100%;
+    background-color: $chrome-grey;
+    padding: 2px;
+    @include border-outset();
+    display: flex !important;
+    flex-direction: column;
+}
+
+.Window.active .TitleBar {
+    @include inverted();
+}
+
+.MenuItem {
+    display: inline-block;
+    padding: 4px 8px;
+
+    &::first-letter {
+        text-decoration: underline;
+    }
+
+    &:hover {
+        @include inverted();
+    }
+}
+
+.TaskBar {
+    background-color: $chrome-grey;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 30px;
+    border-top: 1px #fbfbfb solid;
+
+    .clock {
+        width: 80px;
+        margin: 2px;
+        float: right;
+        padding: 2px;
+        border: 1px inset;
+        user-select: none;
+        text-align: center;
+    }
+}
+
+.TaskBarEntry {
+    width: 220px;
+}
+
+.button {
+    display: inline-block;
+    margin: 2px;
+    padding: 2px;
+    @include border-outset();
+    position: relative;
+
+    &:hover {
+        background-color: #040089;
+        color: white;
+        @include border-inset();
+    }
+
+    &:before {
+        content: " ";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-bottom: 1px solid #868686;
+        border-right: 1px solid #868686;
+    }
+}
+
+.TaskBarEntry.button.minimized {
+    &:hover {
+        background-color: #040089;
+    }
+
+    background-color: #bbb;
+    @include border-inset();
+}
+
+.start {
+    width: 65px;
+}
+
+.start.active {
+    background-color: #bbb;
+    @include border-inset();
+}
+
+.startMenu {
+    position: fixed;
+    left: 5px;
+    bottom: 32px;
+    width: 282px;
+    height: 426px;
+    background-color: $chrome-grey;
+    padding: 0;
+    list-style: none;
+    @include border-outset()
+}
+
+.sideLogo {
+    width: 40px;
+    height: 100%;
+    background-color: #878787;
+    float: left;
+}
+
+.rotatedTitle {
+    color: #c7c7c7;
+    width: 200px;
+    font-weight: bold;
+    font-size: 28px;
+    display: inline-block;
+    transform: rotate(-90deg) translateX(-300px) translateY(-80px);
+    font-weight: 900;
+    font-family: Helvetica;
+
+    .year {
+        font-weight: 400;
+    }
+}
+
+.startMenuItems {
+    float: right;
+    display: block;
+    width: 240px;
+}
+
+.startMenuItem {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    display: inline-block;
+
+    &::first-letter {
+        text-decoration: underline;
+    }
+
+    &:hover {
+        background-color: #040089;
+        color: white;
+    }
+}
+
+.desktopItems {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    align-content: flex-start;
+    margin: 60px 0;
+}
+
+.desktopItem {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+
+    span {
+        color: white;
+        margin-top: 60px;
+    }
+
+    &:focus {
+        outline: none;
+
+        span {
+            background-color: #040089;
+        }
+    }
+}
+
+.browser,
+textarea {
+    flex-grow: 1;
+}
+
+.Window textarea {
+    outline: none;
+    font-size: 14px;
+}
+
+.about {
+    h1 {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    padding: 40px;
+    line-height: 1.4;
+}
+
+.fill {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
