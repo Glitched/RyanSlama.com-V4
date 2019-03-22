@@ -6,7 +6,6 @@ import { spotifyData } from './spotify';
 
 const Home = function Home(props: { start: Function }) {
     return <div id="home">
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Source+Serif+Pro:400,700" rel="stylesheet" />
         <header>
             <section id="info">
                 <h1>Hey, I'm Ryan</h1>
