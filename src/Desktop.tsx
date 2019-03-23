@@ -3,6 +3,7 @@ import React from 'react';
 interface ItemProps {
     title: string;
     reducer: Function;
+    icon?: string
 }
 
 function Item(props: ItemProps) {
@@ -14,17 +15,20 @@ function Item(props: ItemProps) {
             title: props.title
         })}
     >
-        <span> {props.title} </span>
+        <span>
+            <img className="desktopIcon" src={props.icon || "/icons/speaker.png"} />
+            {props.title}
+        </span>
     </div>
 }
 
 export function Desktop(props: { reducer: Function }) {
     return <div className="desktopItems">
-        <Item title="Getting Started" reducer={() => props.reducer} />
-        <Item title="Internet Explorer" reducer={() => props.reducer} />
-        <Item title="About Me" reducer={() => props.reducer} />
-        <Item title="Notepad" reducer={() => props.reducer} />
-        <Item title="Resume.pdf" reducer={() => props.reducer} />
-        <Item title="Hint.txt" reducer={() => props.reducer} />
+        <Item title="Getting Started" icon="/icons/help.png" reducer={() => props.reducer} />
+        <Item title="Internet Explorer" icon="/icons/msie.png" reducer={() => props.reducer} />
+        <Item title="About Me" icon="/icons/about.png" reducer={() => props.reducer} />
+        <Item title="Notepad" icon="/icons/notepad.png" reducer={() => props.reducer} />
+        <Item title="Resume.pdf" icon="/icons/pdf.png" reducer={() => props.reducer} />
+        <Item title="Hint.txt" icon="/icons/hint.png" reducer={() => props.reducer} />
     </div >
 }

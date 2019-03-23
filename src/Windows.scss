@@ -253,6 +253,12 @@ $chrome-grey: #c5c5c5;
     span {
         color: white;
         margin-top: 60px;
+
+        img {
+            display: block;
+            margin: auto;
+            width: 48px;
+        }
     }
 
     &:focus {
