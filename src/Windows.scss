@@ -96,15 +96,39 @@ $chrome-grey: #c5c5c5;
     height: 30px;
     border-top: 1px #fbfbfb solid;
 
-    .clock {
-        width: 80px;
+    .tray {
+
+        .clock {
+            padding: 2px;
+            display: inline-block;
+        }
+
+        .trayIcon {
+            height: 16px;
+            vertical-align: text-bottom;
+        }
+
+        padding: 0 2px;
         margin: 2px;
         float: right;
-        padding: 2px;
         border: 1px inset;
         user-select: none;
         text-align: center;
     }
+}
+
+.winamp,
+.winampVisible {
+    position: absolute;
+    right: 5px;
+    bottom: 35px;
+    @include border-outset();
+    height: 500px;
+    display: flex;
+}
+
+.winamp {
+    display: none;
 }
 
 .TaskBarEntry {
