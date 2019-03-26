@@ -53,7 +53,7 @@ export interface AppWindow {
     y: number;
     width: number;
     height: number;
-    content: ReactNode;
+    content: (f: Function) => ReactNode;
     key: number;
 }
 
@@ -76,7 +76,7 @@ export function Window(props: WindowProps) {
             <TitleBar f={props.f}>{props.title}</TitleBar>
             <MenuBar f={() => props.f({ type: "getFocus" })} />
             <div onClick={() => props.f({ type: "getFocus" })} className="fill">
-                {props.content}
+                {props.content(props.f)}
             </div>
         </Rnd >
     );
