@@ -1,3 +1,7 @@
+.containsWindows {
+    overflow: hidden;
+}
+
 .Windows {
     font-family: "MS Sans Serif", "Microsoft Sans Serif", Arial, Helvetica;
     user-select: none;
@@ -306,7 +310,7 @@ textarea {
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
+    overflow: hidden scroll;
 }
 
 .overlay {

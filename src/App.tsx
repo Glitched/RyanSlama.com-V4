@@ -10,8 +10,13 @@ const App = React.memo(
         const views = [
             <Home start={() => {
                 setCurrentView(1);
+                document.body.classList.add('containsWindows');
                 let i = setInterval(() => { setCurrentView(2) }, 15000);
-                let j = setInterval(() => { setCurrentView(0); clearInterval(i) }, 18000);
+                let j = setInterval(() => {
+                    setCurrentView(0);
+                    clearInterval(i);
+                    document.body.classList.remove('containsWindows');
+                }, 18000);
                 let k = setInterval(() => { clearInterval(j); clearInterval(k) }, 20000);
             }} />,
             <Windows />,
