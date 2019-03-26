@@ -11,13 +11,13 @@ const App = React.memo(
             <Home start={() => {
                 setCurrentView(1);
                 document.body.classList.add('containsWindows');
-                let i = setInterval(() => { setCurrentView(2) }, 15000);
+                let i = setInterval(() => { setCurrentView(2) }, 25000);
                 let j = setInterval(() => {
                     setCurrentView(0);
                     clearInterval(i);
                     document.body.classList.remove('containsWindows');
-                }, 18000);
-                let k = setInterval(() => { clearInterval(j); clearInterval(k) }, 20000);
+                }, 28000);
+                let k = setInterval(() => { clearInterval(j); clearInterval(k) }, 30000);
             }} />,
             <Windows update={() => {
                 var killId = setTimeout(function () {
