@@ -65,7 +65,7 @@ export const Programs: { [key: string]: program; } = {
         width: 600,
         content: (f) => (
             <div className="updater">
-                <p>New critical updates are available for your computer. Microsoft strongly recommends that you install these updates now. </p>
+                <p>New critical updates are available for your computer. Ryan strongly recommends that you install these updates now. </p>
                 <p>To install these updates, click "Update Now." Windows Update will guide you through the installation process. </p>
                 <p>If you would like to postpone installation for 24 hours, click "Notify Me Later." This message will appear tomorrow when you connect to the Internet. Postponing installation of critical updates is not recommended. </p>
                 <div className="buttons">
