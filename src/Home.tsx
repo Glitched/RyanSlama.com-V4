@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.scss';
 
 import { spotifyData } from './spotify';
+import { recommends } from './recommends';
 
 
 const Home = function Home(props: { start: Function }) {
@@ -39,20 +40,14 @@ I’m interested in weird music, modern board games, interesting podcasts, and o
         <div id="recommends">
             <h2>Ryan <br />Recommends</h2>
             <ul>
-                <li>
-                    <span className="title">
-                        <a target="_blank" rel="noopener" href="https://www.conradbastable.com/essays/the-uncharity-of-college-the-big-business-nobody-understands">
-                            The Uncharity of College: The Big Business Nobody Understands</a>
-                    </span>
-                    <span className="source">Conrad Bastable</span>
-                </li>
-                <li>
-                    <span className="title">
-                        <a target="_blank" rel="noopener" href="https://open.spotify.com/album/4EPQtdq6vvwxuYeQTrwDVY?si=Oom12VLUSua1bdw7_gIyzw">
-                            Isolation</a>
-                    </span>
-                    <span className="source">Kali Uchis</span>
-                </li>
+                {recommends.map(r =>
+                    <li>
+                        <span className="title">
+                            <a target="_blank" rel="noopener" href={r.href}> {r.title} </a>
+                        </span>
+                        <span className="source">{r.source}</span>
+                    </li>
+                )}
             </ul>
         </div>
         <footer>Ryan Slama © 2019</footer>
