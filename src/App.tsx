@@ -6,7 +6,7 @@ import Bluescreen from './Bluescreen';
 
 const App = React.memo(
     function App() {
-        let [currentView, setCurrentView] = useState(1);
+        let [currentView, setCurrentView] = useState(0);
         const views = [
             <Home start={() => {
                 setCurrentView(1);
