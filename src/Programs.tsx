@@ -18,8 +18,8 @@ export const Programs: { [key: string]: program; } = {
         </div>)
     },
     "Internet Explorer": {
-        height: 400,
-        width: 600,
+        height: 480,
+        width: 620,
         content: (
             <div className="fill">
                 <div className="overlay" />
@@ -53,6 +53,17 @@ I’m interested in weird music, modern board games, interesting podcasts, and o
             <div className="fill">
                 <div className="overlay" />
                 <iframe className="browser" src="Resume.pdf" />
+            </div>)
+    },
+    "Critical Update Notification": {
+        height: 320,
+        width: 600,
+        content: (
+            <div className="updater">
+                <p>New critical updates are available for your computer. Microsoft strongly recommends that you install these updates now. </p>
+                <p>To install these updates, click "Update Now." Windows Update will guide you through the installation process. </p>
+                <p>If you would like to postpone installation for 24 hours, click "Notify Me Later." This message will appear tomorrow when you connect to the Internet. Postponing installation of critical updates is not recommended. </p>
+                <button>Notify Me Later</button> <button>Update Now</button>
             </div>)
     }
 }

@@ -98,17 +98,9 @@ const Windows = () => {
         key: Math.random(),
         title: "Internet Explorer",
         ...Programs["Internet Explorer"],
-        x: document.body.clientWidth * 0.4,
+        x: document.body.clientWidth * 0.5,
         y: 52,
     }, {
-        title: "Resume.pdf",
-        isMinimized: false,
-        x: document.body.clientWidth * 0.7,
-        y: 122,
-        ...Programs["Resume.pdf"],
-        key: Math.random()
-    }
-        , {
         height: 400,
         isMinimized: false,
         key: Math.random(),
@@ -119,7 +111,7 @@ const Windows = () => {
     }, {
         title: "Getting Started",
         isMinimized: false,
-        x: document.body.clientWidth / 10,
+        x: document.body.clientWidth * 0.3,
         y: 200,
         ...Programs["Getting Started"],
         key: Math.random(),

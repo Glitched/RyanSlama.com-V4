@@ -1,6 +1,6 @@
 import React, { ReactNode, useState, useEffect } from 'react';
 
-function SysTray(props: { toggleWinamp: () => void }) {
+function SysTray(props: { toggleWinamp: () => void, f: Function }) {
     let [time, setTime] = useState(
         new Date().toLocaleString("en-US", { hour: "2-digit", minute: "2-digit" })
     )
@@ -17,7 +17,10 @@ function SysTray(props: { toggleWinamp: () => void }) {
 
     return <div className="tray">
         <img className="trayIcon" src="/icons/speaker.png" onClick={() => props.toggleWinamp()} />
-        <img className="trayIcon" src="/icons/update.png" />
+        <img className="trayIcon" src="/icons/update.png" onClick={() => props.f()({
+            type: "launch",
+            title: "Critical Update Notification"
+        })} />
         <span className="clock"> {time} </span>
     </div>
 }
@@ -46,6 +49,6 @@ export function TaskBar(props: TaskBarProps) {
                 allow="encrypted-media"
             />
         </div>
-        <SysTray toggleWinamp={() => setWinamp(!showWinamp)} />
+        <SysTray toggleWinamp={() => setWinamp(!showWinamp)} f={props.f} />
     </div >
 }
