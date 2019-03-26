@@ -90,7 +90,7 @@ interface launch extends action {
 }
 
 
-const Windows = () => {
+const Windows = (props: { update: () => void }) => {
 
     const [windows, setWindows] = useState([{
         height: 400,
@@ -125,6 +125,10 @@ const Windows = () => {
         return (action: action) => {
             setShowStartMenu(false)
             const resolvers: { [s: string]: (() => AppWindow[]) } = {
+                "update": () => {
+                    props.update();
+                    return close(i, windows)
+                },
                 "close": () => close(i, windows),
                 "maximize": () => maximize(i, windows),
                 "minimize": () => minimize(i, windows, true),

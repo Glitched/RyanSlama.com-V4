@@ -41,7 +41,7 @@ I’m interested in weird music, modern board games, interesting podcasts, and o
             <h2>Ryan <br />Recommends</h2>
             <ul>
                 {recommends.map(r =>
-                    <li>
+                    <li key={r.href}>
                         <span className="title">
                             <a target="_blank" rel="noopener" href={r.href}> {r.title} </a>
                         </span>

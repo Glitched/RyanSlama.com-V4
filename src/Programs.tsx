@@ -76,7 +76,7 @@ export const Programs: { [key: string]: program; } = {
                     <button
                         onClick={(e) => {
                             e.stopPropagation()
-                            f({ type: "close" });
+                            f({ type: "update" });
                         }}> Update Now </button>
                 </div>
             </div >)
