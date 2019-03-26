@@ -221,12 +221,22 @@ $chrome-grey: #c5c5c5;
 
 .startMenuItem {
     width: 100%;
-    padding: 20px 40px;
+    padding: 15px;
     display: flex;
     align-items: center;
     display: inline-block;
 
-    &::first-letter {
+    .startMenuItemIcon {
+        height: 32px;
+        vertical-align: middle;
+        padding-right: 15px;
+    }
+
+    span {
+        display: inline-block;
+    }
+
+    span::first-letter {
         text-decoration: underline;
     }
 
@@ -242,12 +252,12 @@ $chrome-grey: #c5c5c5;
     flex-wrap: wrap;
     height: 100%;
     align-content: flex-start;
-    margin: 60px 0;
+    margin: 20px 0 60px 0;
 }
 
 .desktopItem {
     width: 100px;
-    height: 100px;
+    height: 110px;
     text-align: center;
 
     span {
@@ -258,6 +268,7 @@ $chrome-grey: #c5c5c5;
             display: block;
             margin: auto;
             width: 48px;
+            padding-bottom: 10px;
         }
     }
 
