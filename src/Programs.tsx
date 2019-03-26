@@ -68,15 +68,17 @@ export const Programs: { [key: string]: program; } = {
                 <p>New critical updates are available for your computer. Microsoft strongly recommends that you install these updates now. </p>
                 <p>To install these updates, click "Update Now." Windows Update will guide you through the installation process. </p>
                 <p>If you would like to postpone installation for 24 hours, click "Notify Me Later." This message will appear tomorrow when you connect to the Internet. Postponing installation of critical updates is not recommended. </p>
-                <button onClick={(e) => {
-                    e.stopPropagation()
-                    f({ type: "close" });
-                }}>Notify Me Later</button>
-                <button
-                    onClick={(e) => {
+                <div className="buttons">
+                    <button onClick={(e) => {
                         e.stopPropagation()
                         f({ type: "close" });
-                    }}> Update Now </button>
+                    }}>Notify Me Later</button>
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation()
+                            f({ type: "close" });
+                        }}> Update Now </button>
+                </div>
             </div >)
     }
 }
