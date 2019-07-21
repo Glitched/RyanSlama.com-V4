@@ -10,13 +10,15 @@ const Home = function Home(props: { start: Function }) {
         <header>
             <section id="info">
                 <h1>Hey, I'm Ryan</h1>
-                <p>I’m a Computer Science Junior at Cornell. This summer, I’ll be  on Slack’s Product Security team as a Kleiner Perkins Engineering Fellow.
-I’m interested in weird music, modern board games, interesting podcasts, and oxford commas. </p>
+                <p>I’m a Computer Science Senior at Cornell and 2019 Kleiner Perkins Engineering Fellow.
+                    The last two summers, I've worked on Slack’s Product Security team.
+                    I’m interested in weird music, modern board games, interesting podcasts, and oxford commas.
+                </p>
                 <ul>
-                    <li><a target="_blank" rel="noopener" href="/Resume.pdf">Resume</a></li>
-                    <li><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/RyanSlama">LinkedIn</a></li>
-                    <li><a target="_blank" rel="noopener" href="https://github.com/Glitched">GitHub</a></li>
-                    <li><a target="_blank" rel="noopener" href="https://www.facebook.com/ryan.slama">Facebook</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="/Resume.pdf">Resume</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/RyanSlama">LinkedIn</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/Glitched">GitHub</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/ryan.slama">Facebook</a></li>
                 </ul>
             </section>
             <aside>
@@ -24,14 +26,16 @@ I’m interested in weird music, modern board games, interesting podcasts, and o
             </aside>
         </header>
         <div id="spotify">
-            <h2>Stalk Me On Spotify</h2>
-            <p>Or just check out what I’ve been listening to lately</p>
+            <div className="spotifyHeader">
+                <h2>Stalk Me On Spotify</h2>
+                <p>Or just check out what I’ve been listening to lately</p>
+            </div>
             <ul>
                 {spotifyData.items.map((artist, i) => {
                     if (document.body.clientWidth > 550 || i < 12) {
                         return (<li className="artist" key={artist.id}>
                             <img src={artist.images[1].url} alt="" />
-                            <a target="_blank" rel="noopener" href={artist.uri}>{artist.name}</a>
+                            <a target="_blank" rel="noopener noreferrer" href={artist.uri}>{artist.name}</a>
                         </li>)
                     }
                 })}
@@ -43,7 +47,7 @@ I’m interested in weird music, modern board games, interesting podcasts, and o
                 {recommends.map(r =>
                     <li key={r.href}>
                         <span className="title">
-                            <a target="_blank" rel="noopener" href={r.href}> {r.title} </a>
+                            <a target="_blank" rel="noopener noreferrer" href={r.href}> {r.title} </a>
                         </span>
                         <span className="source">{r.source}</span>
                     </li>
@@ -51,7 +55,7 @@ I’m interested in weird music, modern board games, interesting podcasts, and o
             </ul>
         </div>
         <footer>Ryan Slama © 2019</footer>
-        <div className={"startButton"} onClick={() => props.start()}> ❖ Start </div>
+        <div className={"startButton"} onClick={() => props.start()}> <span className="spinner">❖</span> Start </div>
     </div>;
 }
 

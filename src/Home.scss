@@ -2,13 +2,30 @@
     box-sizing: border-box;
 }
 
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: rotating 3s cubic-bezier(0.9, 0, 0.15, 1) infinite;
+    display: inline-block;
+}
+
 body {
     overflow-x: hidden;
+    background-color: #533ec5;
 }
 
 #home {
     overflow: hidden;
     background: white;
+    border-top: 10px #533ec5 solid;
 }
 
 #info,
@@ -55,9 +72,9 @@ header {
     }
 
     p {
-        line-height: 2;
+        line-height: 1.5;
         font-size: 18px;
-        color: #3A3A3A;
+        color: #555;
     }
 
     ul {
@@ -67,7 +84,7 @@ header {
         justify-content: space-between;
 
         li {
-            transition: all 0.3s cubic-bezier(0.6, 0.15, 0.43, 1.53);
+            transition: all 0.2s cubic-bezier(0.6, 0.15, 0.43, 1.53);
 
             a {
                 font-family: 'Source Serif Pro', serif;
@@ -75,12 +92,16 @@ header {
                 line-height: 24px;
                 font-size: 22px;
                 text-align: center;
-                color: #2100D3;
+                color: #533ec5;
                 letter-spacing: 0.2px;
             }
         }
 
         li:hover {
+            a {
+                color: #2100D3;
+            }
+
             transform: translateY(-4px);
             border-bottom: 2px solid #2100D3;
         }
@@ -108,9 +129,8 @@ header {
     position: relative;
     min-height: 800px;
 
-    ul,
-    p,
-    h2 {
+    .spotifyHeader,
+    ul {
         transform: rotate(-4.5deg);
         padding: 0 200px;
     }
@@ -125,6 +145,7 @@ header {
         font-size: 28px;
         margin-top: 10px;
         text-shadow: 0 0 5px black;
+        color: #ddd;
     }
 
     ul {
@@ -134,7 +155,6 @@ header {
     }
 
     .artist {
-        width: 100px;
         justify-self: center;
         padding: 20px 0;
         text-align: center;
@@ -145,7 +165,7 @@ header {
             border-radius: 100%;
             display: block;
             object-fit: cover;
-            margin-bottom: 20px;
+            margin: 20px auto;
             transition: all 0.2s cubic-bezier(0.6, 0.15, 0.43, 1.53);
             box-shadow: 0 0 20px 2px black;
         }
@@ -157,7 +177,7 @@ header {
     }
 
     a {
-        color: white;
+        color: #eae9f0;
         font-size: 22px;
         text-shadow: 0 0 5px black;
     }
@@ -168,14 +188,15 @@ header {
 
     h2 {
         font-size: 82px;
+        line-height: 1.125;
     }
 
     .title {
-        font-size: 32px;
+        font-size: 28px;
         display: block;
 
         a {
-            color: #2100D3;
+            color: #533ec5;
             font-family: 'Source Serif Pro', serif;
             font-weight: bold;
         }
@@ -280,15 +301,15 @@ footer {
         left: -10%;
 
         .artist {
-            width: 100px;
-
             img {
                 width: 100px;
                 height: 100px;
+                margin: 0 auto 10px;
             }
 
             a {
                 font-size: 16px;
+                color: #ddd;
             }
         }
 
@@ -300,6 +321,7 @@ footer {
 
         p {
             font-size: 20px;
+            color: #ddd;
         }
 
         ul {
@@ -374,11 +396,8 @@ footer {
             font-size: 48px;
         }
 
+        .source,
         .title {
-            font-size: 24px;
-        }
-
-        .source {
             font-size: 18px;
         }
     }
