@@ -3,6 +3,10 @@ export const recommends: {
     source: string,
     href: string
 }[] = [{
+    title: "Laws of Tech: Commoditize Your Complement",
+    source: "Gwern",
+    href: "https://www.gwern.net/Complement"
+}, {
     title: "Questions",
     source: "Patrick Collison",
     href: "https://patrickcollison.com/questions"
