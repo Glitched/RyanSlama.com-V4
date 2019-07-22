@@ -158,7 +158,7 @@ const Windows = (props: { update: () => void }) => {
             {visibileWindows.map(((w, i) =>
                 <Window
                     {...w}
-                    isActive={i == visibileWindows.length - 1}
+                    isActive={i === visibileWindows.length - 1}
                     key={w.key}
                     f={getReducer(windows.findIndex(w2 => w2.key === w.key))}
                 />))
@@ -167,7 +167,7 @@ const Windows = (props: { update: () => void }) => {
             <TaskBar startActive={showStartMenu} toggleStart={toggleStart} f={getReducer}>
                 {[...windows]
                     .map((w, i) => { return { index: i, window: w } })
-                    .sort((a, b) => ((a.window.key == b.window.key) ? 0 : ((a.window.key > b.window.key) ? 1 : -1)))
+                    .sort((a, b) => ((a.window.key === b.window.key) ? 0 : ((a.window.key > b.window.key) ? 1 : -1)))
                     .map((w) => <TaskbarEntry key={w.window.key} w={w.window} f={getReducer(w.index)} />)
                 }
             </TaskBar>

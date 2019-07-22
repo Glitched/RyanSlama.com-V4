@@ -9,6 +9,12 @@
     overflow: hidden;
     background-color: #0098ad;
     box-sizing: border-box;
+
+    ::selection {
+        color: white;
+        // Use RGBA for opaque selection BG
+        background-color: rgba(4, 0, 137, 0.99);
+    }
 }
 
 ol,
