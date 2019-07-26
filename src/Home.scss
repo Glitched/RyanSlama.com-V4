@@ -278,8 +278,7 @@ footer {
 @media only screen and (max-width: 1150px) {
     #spotify {
 
-        h2,
-        p,
+        .spotifyHeader,
         ul {
             padding: 0 5%;
         }
@@ -322,8 +321,7 @@ footer {
             }
         }
 
-        h2,
-        p,
+        .spotifyHeader,
         ul {
             padding: 0 10%;
         }
@@ -379,8 +377,7 @@ footer {
             }
         }
 
-        h2,
-        p {
+        .spotifyHeader {
             padding: 0 12%;
         }
 
