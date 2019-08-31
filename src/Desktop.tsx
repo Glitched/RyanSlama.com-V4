@@ -22,8 +22,8 @@ function Item(props: ItemProps) {
     </div>
 }
 
-export function Desktop(props: { reducer: Function }) {
-    return <div className="desktopItems">
+export function Desktop(props: { reducer: Function, hideStartMenu: Function }) {
+    return <div className="desktopItems" onClick={() => console.log(props.hideStartMenu)}>
         <Item title="Getting Started" icon="/icons/help.png" reducer={() => props.reducer} />
         <Item title="Internet Explorer" icon="/icons/msie.png" reducer={() => props.reducer} />
         <Item title="About Me" icon="/icons/about.png" reducer={() => props.reducer} />

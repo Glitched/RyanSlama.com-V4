@@ -163,7 +163,7 @@ const Windows = (props: { update: () => void }) => {
                     f={getReducer(windows.findIndex(w2 => w2.key === w.key))}
                 />))
             }
-            <Desktop reducer={getReducer(-1)} />
+            <Desktop reducer={getReducer(-1)} hideStartMenu={() => console.log("triggered")} />
             <TaskBar startActive={showStartMenu} toggleStart={toggleStart} f={getReducer}>
                 {[...windows]
                     .map((w, i) => { return { index: i, window: w } })
