@@ -16,7 +16,7 @@ function StartMenuItem(props: {
         className="startMenuItem"
         onClick={() => props.reducer()({ type: "launch", title: props.program })}
     >
-        <img src={props.icon} className="startMenuItemIcon" />
+        <img src={props.icon} alt="Start" className="startMenuItemIcon" />
         <span>{props.displayName || props.program}</span>
     </div>
 }

@@ -25,7 +25,7 @@ export const Programs: { [key: string]: program; } = {
         content: (f) => (
             <div className="fill">
                 <div className="overlay" />
-                <iframe className="browser" src="https://RyanSlama.com" />
+                <iframe className="browser" title="Internet Explorer" src="https://RyanSlama.com" />
             </div>
         )
     },
@@ -59,7 +59,7 @@ export const Programs: { [key: string]: program; } = {
         content: (f) => (
             <div className="fill">
                 <div className="overlay" />
-                <iframe className="browser" src="Resume.pdf" />
+                <iframe className="browser" title="Resume.pdf" src="Resume.pdf" />
             </div>)
     },
     "Critical Update Notification": {

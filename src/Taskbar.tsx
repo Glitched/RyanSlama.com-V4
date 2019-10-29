@@ -16,8 +16,8 @@ function SysTray(props: { toggleWinamp: () => void, f: Function }) {
     })
 
     return <div className="tray">
-        <img className="trayIcon" src="/icons/speaker.png" onClick={() => props.toggleWinamp()} />
-        <img className="trayIcon" src="/icons/update.png" onClick={() => props.f()({
+        <img className="trayIcon" src="/icons/speaker.png" alt="Mini Player" onClick={() => props.toggleWinamp()} />
+        <img className="trayIcon" src="/icons/update.png" alt="System Update" onClick={() => props.f()({
             type: "launch",
             title: "Critical Update Notification"
         })} />
@@ -44,6 +44,7 @@ export function TaskBar(props: TaskBarProps) {
         {props.children}
         <div className={!showWinamp ? "winamp" : "winampVisible"}>
             <iframe
+                title="Mini Player"
                 className="browser"
                 src="https://open.spotify.com/embed/user/theslama/playlist/2xXLjFAhpmc7rSW5h2bzup"
                 allow="encrypted-media"

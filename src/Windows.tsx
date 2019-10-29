@@ -14,8 +14,9 @@ function bringToTop(idx: number, arr: AppWindow[]) {
 }
 
 function close(idx: number, arr: AppWindow[]) {
-    arr.splice(idx, 1)
-    return arr
+    arr.splice(idx, 1);
+    // Copy arr to trigger re-render
+    return [...arr]
 }
 
 function minimize(idx: number, arr: AppWindow[], shouldMinimize: boolean) {
@@ -71,24 +72,36 @@ function launch(arr: AppWindow[], title: string) {
     return [...arr, new_window]
 }
 
-interface action {
-    type: string
+type SimpleActionTypes =
+    | "update"
+    | "close"
+    | "maximize"
+    | "minimize"
+    | "unminimize"
+    | "getFocus"
+
+interface SimpleAction {
+    type: SimpleActionTypes
 }
 
-interface setPos extends action {
+interface setPos {
+    type: "setPos"
     x: number,
     y: number
 }
 
-interface setSize extends action {
+interface setSize {
+    type: "setSize"
     width: number,
     height: number
 }
 
-interface launch extends action {
+interface launch {
+    type: "launch"
     title: string;
 }
 
+type Action = SimpleAction | launch | setPos | setSize
 
 const Windows = (props: { update: () => void }) => {
 
@@ -122,12 +135,14 @@ const Windows = (props: { update: () => void }) => {
     const toggleStart = () => setShowStartMenu(!showStartMenu)
 
     function getReducer(i: number) {
-        return (action: action) => {
+        return (action: Action) => {
+            console.log(action.type);
+            console.log(i)
             setShowStartMenu(false)
             const resolvers: { [s: string]: (() => AppWindow[]) } = {
                 "update": () => {
                     props.update();
-                    return close(i, windows)
+                    return close(i, windows);
                 },
                 "close": () => close(i, windows),
                 "maximize": () => maximize(i, windows),
@@ -163,7 +178,7 @@ const Windows = (props: { update: () => void }) => {
                     f={getReducer(windows.findIndex(w2 => w2.key === w.key))}
                 />))
             }
-            <Desktop reducer={getReducer(-1)} hideStartMenu={() => console.log("triggered")} />
+            <Desktop reducer={getReducer(-1)} hideStartMenu={() => setShowStartMenu(false)} />
             <TaskBar startActive={showStartMenu} toggleStart={toggleStart} f={getReducer}>
                 {[...windows]
                     .map((w, i) => { return { index: i, window: w } })

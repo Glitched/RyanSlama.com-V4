@@ -16,14 +16,14 @@ function Item(props: ItemProps) {
         })}
     >
         <span>
-            <img className="desktopIcon" src={props.icon || "/icons/speaker.png"} />
+            <img className="desktopIcon" alt={'Icon for ' + props.title} src={props.icon || "/icons/speaker.png"} />
             {props.title}
         </span>
     </div>
 }
 
 export function Desktop(props: { reducer: Function, hideStartMenu: Function }) {
-    return <div className="desktopItems" onClick={() => console.log(props.hideStartMenu)}>
+    return <div className="desktopItems" onClick={() => props.hideStartMenu()}>
         <Item title="Getting Started" icon="/icons/help.png" reducer={() => props.reducer} />
         <Item title="Internet Explorer" icon="/icons/msie.png" reducer={() => props.reducer} />
         <Item title="About Me" icon="/icons/about.png" reducer={() => props.reducer} />

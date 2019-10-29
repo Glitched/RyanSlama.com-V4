@@ -20,8 +20,8 @@ const App = React.memo(
                 let k = setInterval(() => { clearInterval(j); clearInterval(k) }, 30000);
             }} />,
             <Windows update={() => {
-                var killId = setTimeout(function () {
-                    for (var i: any = killId; i > 0; i--) clearInterval(i)
+                const killId = setTimeout(function () {
+                    for (let i: any = killId; i > 0; i--) clearInterval(i)
                 }, 10);
             }} />,
             <Bluescreen />,
