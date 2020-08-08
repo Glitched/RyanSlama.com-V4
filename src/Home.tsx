@@ -38,6 +38,7 @@ const Home = function Home(props: { start: Function }) {
                             <a target="_blank" rel="noopener noreferrer" href={artist.uri}>{artist.name}</a>
                         </li>)
                     }
+                    return null;
                 })}
             </ul>
         </div>
