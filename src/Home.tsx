@@ -32,9 +32,10 @@ const Home = function Home(props: { start: Function }) {
             </div>
             <ul>
                 {spotifyData.items.map((artist, i) => {
-                    if (document.body.clientWidth > 550 || (document.body.clientWidth > 1150 && i < 21) || i < 12) {
+                    const width = document.body.clientWidth;
+                    if (width > 1150 || (width > 550 && i < 20) || i < 12) {
                         return (<li className="artist" key={artist.id}>
-                            <img src={artist.images[1].url} alt="" />
+                            <img src={artist.images[1].url} alt={"Photo of " + artist.name} />
                             <a target="_blank" rel="noopener noreferrer" href={artist.uri}>{artist.name}</a>
                         </li>)
                     }
