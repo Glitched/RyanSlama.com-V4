@@ -35,9 +35,9 @@ export const Programs: { [key: string]: program; } = {
         content: (f) => (
             <div className="about">
                 <h1>Ryan Slama</h1>
-                I’m a Computer Science Senior at Cornell and 2019 Kleiner Perkins Engineering Fellow.
-                The last two summers, I've worked on Slack’s Product Security team.
-                I’m interested in weird music, modern board games, interesting podcasts, and oxford commas.
+                I’m an Associate Software Engineer on Slack's Product Security Foundations team, where I interned the past two summers.
+                    I'm a CS grad from Cornell and 2019 Kleiner Perkins Engineering Fellow.
+                    I like weird music, modern board games, podcasts, and oxford commas.
             </div>
         )
     },

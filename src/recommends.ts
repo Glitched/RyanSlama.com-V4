@@ -3,6 +3,10 @@ export const recommends: {
     source: string,
     href: string
 }[] = [{
+    title: "Fetch the Bolt Cutters",
+    source: "Fiona Apple",
+    href: "https://open.spotify.com/album/0fO1KemWL2uCCQmM22iKlj?si=9Mpj3-CRRKyvC30-FMofcw"
+}, {
     title: "Laws of Tech: Commoditize Your Complement",
     source: "Gwern",
     href: "https://www.gwern.net/Complement"

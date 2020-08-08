@@ -10,9 +10,9 @@ const Home = function Home(props: { start: Function }) {
         <header>
             <section id="info">
                 <h1>Hey, I'm Ryan</h1>
-                <p>I’m a Computer Science Senior at Cornell and 2019 Kleiner Perkins Engineering Fellow.
-                    The last two summers, I've worked on Slack’s Product Security team.
-                    I’m interested in weird music, modern board games, interesting podcasts, and oxford commas.
+                <p>I’m an Associate Software Engineer on Slack's Product Security Foundations team, where I interned the past two summers.
+                    I'm a CS grad from Cornell and 2019 Kleiner Perkins Engineering Fellow.
+                    I like weird music, modern board games, podcasts, and oxford commas.
                 </p>
                 <ul>
                     <li><a target="_blank" rel="noopener noreferrer" href="/Resume.pdf">Resume</a></li>
@@ -32,7 +32,7 @@ const Home = function Home(props: { start: Function }) {
             </div>
             <ul>
                 {spotifyData.items.map((artist, i) => {
-                    if (document.body.clientWidth > 550 || i < 12) {
+                    if (document.body.clientWidth > 550 || (document.body.clientWidth > 1150 && i < 21) || i < 12) {
                         return (<li className="artist" key={artist.id}>
                             <img src={artist.images[1].url} alt="" />
                             <a target="_blank" rel="noopener noreferrer" href={artist.uri}>{artist.name}</a>

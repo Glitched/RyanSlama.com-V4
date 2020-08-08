@@ -106,7 +106,6 @@ type Action = SimpleAction | launch | setPos | setSize
 const Windows = (props: { update: () => void }) => {
 
     const [windows, setWindows] = useState([{
-        height: 400,
         isMinimized: false,
         key: Math.random(),
         title: "Internet Explorer",
@@ -114,7 +113,6 @@ const Windows = (props: { update: () => void }) => {
         x: document.body.clientWidth * 0.5,
         y: 52,
     }, {
-        height: 400,
         isMinimized: false,
         key: Math.random(),
         title: "Notepad",
