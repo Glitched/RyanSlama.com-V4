@@ -11,8 +11,8 @@ const Home = function Home(props: { start: Function }) {
             <section id="info">
                 <h1>Hey, I'm Ryan</h1>
                 <p>I’m an Associate Software Engineer on Slack's Product Security Foundations team, where I interned the past two summers.
-                    I'm a CS grad from Cornell and 2019 Kleiner Perkins Engineering Fellow.
-                    I like weird music, modern board games, podcasts, and oxford commas.
+                I'm a CS grad from Cornell and 2019 Kleiner Perkins Engineering Fellow.
+                I like weird music, modern board games, podcasts, and oxford commas.
                 </p>
                 <ul>
                     <li><a target="_blank" rel="noopener noreferrer" href="/Resume.pdf">Resume</a></li>
@@ -56,7 +56,7 @@ const Home = function Home(props: { start: Function }) {
                 )}
             </ul>
         </div>
-        <footer>Ryan Slama © 2019</footer>
+        <footer>Ryan Slama © 2020</footer>
         <div className={"startButton"} onClick={() => props.start()}> <span className="spinner">❖</span> Start </div>
     </div>;
 }

@@ -1,3 +1,9 @@
+$bg: #FFF1D4;
+$bg-secondary: #efe1c5;
+$fg-accent: #7D708F;
+$fg-highlight: #453d63;
+$fg: #251f42;
+
 * {
     box-sizing: border-box;
 }
@@ -19,26 +25,23 @@
 
 body {
     overflow-x: hidden;
-    background-color: #533ec5;
+    background-color: $fg-highlight;
 }
 
 #home {
     overflow: hidden;
-    background: white;
-    border-top: 10px #533ec5 solid;
+    background: $bg-secondary;
 
     ::selection {
-        color: white;
-        // Use RGBA for opaque selection BG
-        background-color: rgba(83, 62, 197, 0.99)
+        color: $bg;
+        background-color:$fg;
     }
 
 }
 
 #info,
 #spotify,
-#recommends,
-footer {
+#recommends {
     font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 
     h1,
@@ -50,7 +53,6 @@ footer {
         font-family: 'Source Serif Pro', serif;
     }
 }
-
 
 a {
     text-decoration: none;
@@ -64,24 +66,30 @@ ul {
 
 header {
     display: flex;
-    justify-content: space-around;
-    margin: 100px 0 200px;
+    justify-content: space-between;
+    margin: 60px auto 160px;
+    max-width: 960px;
+    align-items: center;
+    border-top: 15px solid $fg-highlight;
+    padding-top: 25px;
 }
 
 #info {
-    max-width: 520px;
+    max-width: 500px;
+    color: $fg;
 
     h1 {
         font-family: 'Source Serif Pro', serif;
         font-weight: bold;
-        font-size: 82px;
+        font-size: 80px;
         margin: 0;
+        line-height: 1;
     }
 
     p {
         line-height: 1.5;
-        font-size: 18px;
-        color: #555;
+        font-size: 22px;
+        color: $fg-highlight;
     }
 
     ul {
@@ -91,26 +99,29 @@ header {
         justify-content: space-between;
 
         li {
-            transition: all 0.2s cubic-bezier(0.6, 0.15, 0.43, 1.53);
-
             a {
-                font-family: 'Source Serif Pro', serif;
+                transition: all 0.1s ease;
+
+                font-family: 'Source Code Pro', serif;
                 font-weight: 600;
-                line-height: 24px;
-                font-size: 22px;
+                padding: 5px 10px;
+                font-size: 18px;
                 text-align: center;
-                color: #533ec5;
+                color: $fg-highlight;
                 letter-spacing: 0.2px;
+                box-shadow: 4px 4px 0px $fg;
+                background-color: $bg;
+                border: 2px solid $fg-accent;
+                display: inline-block;
             }
-        }
-
-        li:hover {
-            a {
-                color: #2100D3;
+            a:hover{
+                transform: translate(4px, 4px);
+                box-shadow: 0px 0px 0px $fg-highlight;
             }
-
-            transform: translateY(-4px);
-            border-bottom: 2px solid #2100D3;
+            a:active {
+                box-shadow: inset 2px 2px 0px $fg-highlight;
+                transform: translate(6px, 6px);
+            }
         }
     }
 }
@@ -120,17 +131,22 @@ header {
     border-radius: 100%;
     transition: all 0.3s cubic-bezier(0.59, 0.3, 0, 2.19);
     user-select: none;
+    margin-right: 40px;
 }
 
 #profilePic:hover {
-    transform: rotate(5deg)
+    transform: rotate(5deg);
+}
+
+#profilePic:active {
+    transform: scale(1.05);
 }
 
 #spotify {
     padding: 60px 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('/topalbums.jpg');
+    background: linear-gradient(rgba(27, 22, 49, 0.92), rgba(0, 0, 0, 0.85)), url('/topalbums.jpg');
     background-size: cover;
-    color: white;
+    color: $bg;
     width: 110%;
     transform: rotate(4.5deg);
     left: -5%;
@@ -153,7 +169,7 @@ header {
         font-size: 28px;
         margin-top: 10px;
         text-shadow: 0 0 5px black;
-        color: #ddd;
+        color: #cec1a9;
     }
 
     ul {
@@ -175,7 +191,6 @@ header {
             object-fit: cover;
             margin: 20px auto;
             transition: all 0.2s cubic-bezier(0.6, 0.15, 0.43, 1.53);
-            box-shadow: 0 0 20px 2px black;
             user-select: none;
         }
 
@@ -183,12 +198,16 @@ header {
             transform: rotate(3deg);
         }
 
+        img:active {
+            transform: scale(1.03);
+        }
+
     }
 
     a {
-        color: #eae9f0;
+        color: $bg;
         font-size: 22px;
-        text-shadow: 0 0 5px black;
+        text-shadow: 0 0 5px $fg;
     }
 }
 
@@ -198,6 +217,7 @@ header {
     h2 {
         font-size: 82px;
         line-height: 1.125;
+        color: $fg;
     }
 
     .title {
@@ -205,7 +225,7 @@ header {
         display: block;
 
         a {
-            color: #533ec5;
+            color: $fg-highlight;
             font-family: 'Source Serif Pro', serif;
             font-weight: bold;
         }
@@ -213,7 +233,7 @@ header {
 
     .source {
         font-size: 24px;
-        color: #555;
+        color: $fg-accent;
     }
 
     li {
@@ -222,12 +242,11 @@ header {
 }
 
 footer {
-    background-color: black;
+    background-color: $fg;
     width: 100%;
-    color: white;
-    // height: 60px;
+    color: $bg;
     padding: 20px 200px;
-    // display: block;
+    font-family: 'Source Code Pro', serif;
 }
 
 @mixin border-outset {
@@ -292,7 +311,7 @@ footer {
 @media only screen and (max-width: 960px) {
     header {
         flex-direction: column;
-        margin-top: 40px;
+        margin-top: 0;
     }
 
     #info {
