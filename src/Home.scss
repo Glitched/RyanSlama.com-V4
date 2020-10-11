@@ -158,6 +158,8 @@ header {
     ul {
         transform: rotate(-4.5deg);
         padding: 0 200px;
+        max-width: 1800px;
+        margin: auto;
     }
 
     h2 {
@@ -177,6 +179,8 @@ header {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         padding: 0 200px;
+        margin: auto;
+        max-width: 1800px;
     }
 
     .artist {
@@ -213,6 +217,8 @@ header {
 
 #recommends {
     padding: 0 200px 100px;
+    max-width: 1800px;
+    margin: auto;
 
     h2 {
         font-size: 82px;

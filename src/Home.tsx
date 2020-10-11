@@ -56,7 +56,7 @@ const Home = function Home(props: { start: Function }) {
                 )}
             </ul>
         </div>
-        <footer>Ryan Slama © 2020</footer>
+        <footer>Ryan Slama ©&nbsp;2020</footer>
         <div className={"startButton"} onClick={() => props.start()}> <span className="spinner">❖</span> Start </div>
     </div>;
 }
