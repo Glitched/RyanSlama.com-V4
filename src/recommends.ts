@@ -1,25 +1,15 @@
 export const recommends: {
     title: string,
-    source: string,
-    href: string
+    description: string,
+    event: string,
+    href?: string
 }[] = [{
-    title: "Fetch the Bolt Cutters",
-    source: "Fiona Apple",
-    href: "https://open.spotify.com/album/0fO1KemWL2uCCQmM22iKlj?si=9Mpj3-CRRKyvC30-FMofcw"
+    title: "Canary in the Datamines: Using Log Canary to find PII",
+    event: "LocoMocoSec 2020 (Upcoming)",
+    description: "Why does sensitive data always seem to end up places it shouldn't? We won't answer that exact question in this talk, but we *will* tell you about a tool that we wrote to combat the problem. Log Canary is a tool we wrote to continuously probe our product for places where PII might leak into logs, so that we can resolve the issue before any real data is written. Join us as we explain the concept of Log Canary and go over lessons we learned in its development and deployment.",
 }, {
-    title: "Laws of Tech: Commoditize Your Complement",
-    source: "Gwern",
-    href: "https://www.gwern.net/Complement"
-}, {
-    title: "Questions",
-    source: "Patrick Collison",
-    href: "https://patrickcollison.com/questions"
-}, {
-    title: "The Uncharity of College: The Big Business Nobody Understands",
-    source: "Conrad Bastable",
-    href: "https://www.conradbastable.com/essays/the-uncharity-of-college-the-big-business-nobody-understands"
-}, {
-    title: "Isolation",
-    source: "Kali Uchis",
-    href: "https://open.spotify.com/album/4EPQtdq6vvwxuYeQTrwDVY?si=Oom12VLUSua1bdw7_gIyzw"
+    title: "10,000 Dependencies Under the Sea",
+    event: "DEF CON 28: AppSec Village",
+    description: "Come on our journey of creating scalable tooling and processes to automatically identify vulnerabilities in third-party libraries and handle the question of “ok we found this, who’s going to fix it?”",
+    href: "https://www.youtube.com/watch?v=YgsoBP2ahmU&t=6s"
 }]

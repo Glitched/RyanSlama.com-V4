@@ -27,7 +27,7 @@ const Home = function Home(props: { start: Function }) {
         </header>
         <div id="spotify">
             <div className="spotifyHeader">
-                <h2>Stalk Me On Spotify</h2>
+                <h2>Stalk me on Spotify</h2>
                 <p>Or just check out what I’ve been listening to lately</p>
             </div>
             <ul>
@@ -43,15 +43,21 @@ const Home = function Home(props: { start: Function }) {
                 })}
             </ul>
         </div>
-        <div id="recommends">
-            <h2>Ryan <br />Recommends</h2>
+        <div id="talks">
+            <h2>Talks <br />I've presented</h2>
             <ul>
                 {recommends.map(r =>
-                    <li key={r.href}>
-                        <span className="title">
-                            <a target="_blank" rel="noopener noreferrer" href={r.href}> {r.title} </a>
+                    <li key={r.title}>
+                        <span className="title">{
+                            r.href
+                                ? <a target="_blank" rel="noopener noreferrer" href={r.href}>
+                                    {r.title}
+                                </a>
+                                : r.title
+                        }
                         </span>
-                        <span className="source">{r.source}</span>
+                        <span className="event"> {r.event} </span>
+                        <span className="description">{r.description}</span>
                     </li>
                 )}
             </ul>
