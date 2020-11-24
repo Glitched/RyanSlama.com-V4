@@ -5,8 +5,9 @@ export const recommends: {
     href?: string
 }[] = [{
     title: "Canary in the Datamines: Using Log Canary to find PII",
-    event: "LocoMocoSec 2020 (Upcoming)",
+    event: "LocoMocoSec 2020",
     description: "Why does sensitive data always seem to end up places it shouldn't? We won't answer that exact question in this talk, but we *will* tell you about a tool that we wrote to combat the problem. Log Canary is a tool we wrote to continuously probe our product for places where PII might leak into logs, so that we can resolve the issue before any real data is written. Join us as we explain the concept of Log Canary and go over lessons we learned in its development and deployment.",
+    href: "https://slideslive.com/38942575/canary-in-the-datamines-using-log-canary-to-find-pii"
 }, {
     title: "10,000 Dependencies Under the Sea",
     event: "DEF CON 28: AppSec Village",
