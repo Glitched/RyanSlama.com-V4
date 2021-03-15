@@ -10,8 +10,7 @@ const Home = function Home(props: { start: Function }) {
         <header>
             <section id="info">
                 <h1>Hey, I'm Ryan</h1>
-                <p>I’m an Associate Software Engineer on Slack's Product Security Foundations team, where I interned the past two summers.
-                I'm a CS grad from Cornell and 2019 Kleiner Perkins Engineering Fellow.
+                <p>I’m a Software Engineer on Slack's Product Security Foundations team.
                 I like weird music, modern board games, podcasts, and oxford commas.
                 </p>
                 <ul>

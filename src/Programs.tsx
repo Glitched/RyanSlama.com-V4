@@ -16,7 +16,7 @@ export const Programs: { [key: string]: program; } = {
                 This site has been a small pocket project of mine. <br /><br />
                 Feel free to explore starting with the icons on the left or the Start menu.
                 It's still in it's early stages, so future additions are planned.
-        </div>
+            </div>
         )
     },
     "Internet Explorer": {
@@ -30,14 +30,13 @@ export const Programs: { [key: string]: program; } = {
         )
     },
     "About Me": {
-        height: 320,
-        width: 500,
+        height: 280,
+        width: 460,
         content: (f) => (
             <div className="about">
                 <h1>Ryan Slama</h1>
-                I’m an Associate Software Engineer on Slack's Product Security Foundations team, where I interned the past two summers.
-                    I'm a CS grad from Cornell and 2019 Kleiner Perkins Engineering Fellow.
-                    I like weird music, modern board games, podcasts, and oxford commas.
+                I’m a Software Engineer on Slack's Product Security Foundations team.
+                I like weird music, modern board games, podcasts, and oxford commas.
             </div>
         )
     },
@@ -60,6 +59,17 @@ export const Programs: { [key: string]: program; } = {
             <div className="fill">
                 <div className="overlay" />
                 <iframe className="browser" title="Resume.pdf" src="Resume.pdf" />
+            </div>)
+    },
+    "RS-DOS Prompt": {
+        height: 700,
+        width: 450,
+        content: (f) => (
+            <div className="cmd">
+                <span>Ryan &lt;R&gt; Slama 98</span>
+                <span>  &lt;C&gt;Copyright Ryan Slama 1998-Present</span>
+                <br />
+                <span>C:\&gt;</span>
             </div>)
     },
     "Critical Update Notification": {

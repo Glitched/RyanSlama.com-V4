@@ -67,7 +67,7 @@ ul {
 header {
     display: flex;
     justify-content: space-between;
-    margin: 60px auto 160px;
+    margin: 60px auto 140px;
     max-width: 960px;
     align-items: center;
     border-top: 15px solid $fg-highlight;
@@ -147,6 +147,7 @@ header {
 
 #spotify {
     padding: 60px 0;
+    /* webpackIgnore: true */
     background: linear-gradient(rgba(27, 22, 49, 0.96), rgba(0, 0, 10, 0.9)), url('/topalbums.jpg');
     background-size: cover;
     color: $bg;
